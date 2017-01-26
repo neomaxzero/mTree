@@ -31,6 +31,20 @@ class BST {
     return new node(value);
   }
   
+  returnNode(value, node = this.root) {
+    if(node!= null) {
+      if(node.value == value) {
+        console.log('node founded:', node);
+      } else {
+        if(value < node.value) {
+          this.returnNode(value, node.left)
+        } else {
+          this.returnNode(value, node.right)
+        }
+      }
+    }
+  }
+  
   printTransversal(node = this.root) {
     if(this.root) {
       if(node.left) {
