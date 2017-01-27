@@ -58,6 +58,18 @@ class BST {
       console.log('Empty tree');
     }
   }
+  
+  findSmallest(node = this.root) {
+    if(this.root) {
+      if(node.left) {
+        return this.findSmallest(node.left);
+      } else {
+        return node;
+      }
+    } else {
+      console.log('no root!')
+    }
+  }
 }
 
 class node {
